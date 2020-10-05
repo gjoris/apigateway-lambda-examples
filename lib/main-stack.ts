@@ -107,11 +107,6 @@ class BooksStack extends NestedStack {
     constructor(scope: Construct, props: ResourceNestedStackProps) {
         super(scope, 'integ-restapi-import-BooksStack', props);
 
-        const api = RestApi.fromRestApiAttributes(this, 'RestApi', {
-            restApiId: props.restApiId,
-            rootResourceId: props.rootResourceId,
-        });
-
         const hello = new Function(this, 'hello', {
             runtime: Runtime.NODEJS_10_X,
             handler: 'hello.handler',
